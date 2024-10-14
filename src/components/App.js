@@ -1,6 +1,8 @@
 import React from 'react';
 import { createStore } from "redux";
 import { Provider } from "react-redux";
+import { composeWithDevTools } from "redux-devtools-extension";
+
 
 import Task01 from "./../../01/Task01";
 import Task02 from "./../../02/Task02";
@@ -22,7 +24,7 @@ const reducer = (state = initialState, action) => {
   }
 };
 
-const store = createStore(reducer);
+const store = createStore(reducer, composeWithDevTools());
 
 const App = () => {
   return (
